@@ -17,7 +17,12 @@ while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
         break
-    print('The Artist is ', values[0])
-    #print('Song Name is ' values[1])
+    artistName = values[0]
+    songName = values[1]
+
+    artist = genius.search_artist(artistName, max_songs=3, sort="popularity")
+    song = genius.search_song(songName, artist.name)
+
+    print(song.lyrics)
 
 window.close()
