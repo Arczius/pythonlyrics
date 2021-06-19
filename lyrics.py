@@ -1,3 +1,4 @@
+#use the command "pip install lyricsgenius to install"
 import lyricsgenius
 genius = lyricsgenius.Genius("your token")
 
